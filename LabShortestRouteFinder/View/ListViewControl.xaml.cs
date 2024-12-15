@@ -1,6 +1,8 @@
-﻿using LabShortestRouteFinder.ViewModel;
+﻿using LabShortestRouteFinder.Model;
+using LabShortestRouteFinder.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,16 +21,21 @@ namespace LabShortestRouteFinder.View
     /// Interaction logic for ListView.xaml
     /// </summary>
     public partial class ListViewControl : UserControl
-    {
+    { 
         public ListViewControl()
         {
             InitializeComponent();
 
             //// Set DataContext to RouteViewModel if not done in XAML
-            //if (DataContext == null)
-            //{
-            //    DataContext = new RouteViewModel();
-            //}
+            if (DataContext == null)
+            {
+             DataContext = new MainViewModel();
+            }
+
+        }
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.WriteLine("cvdvccvvc");
         }
     }
 }

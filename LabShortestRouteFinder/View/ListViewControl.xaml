@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              >
     <Grid>
-        <DataGrid ItemsSource="{Binding Routes}" AutoGenerateColumns="False" Margin="10" IsReadOnly="False">
+        <DataGrid ItemsSource="{Binding Routes}" SelectedItem="{Binding SelectedRoute}" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" Margin="10" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Start" Binding="{Binding Start.Name, Mode=TwoWay}" />
                 <DataGridTextColumn Header="Destination" Binding="{Binding Destination.Name}" />
                 <DataGridTextColumn Header="Driving distance" Binding="{Binding DrivingDistance}" />
                 <DataGridTextColumn Header="Straight line distance" Binding="{Binding StraightLineDistance}" />
-				<DataGridTextColumn Header="Cost" Binding="{Binding Cost}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
