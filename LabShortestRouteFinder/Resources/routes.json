@@ -2,78 +2,77 @@
   {
     "Start": {
       "Name": "Stockholm",
-      "X": 100,
-      "Y": 200,
+      "X": 267,
+      "Y": 608,
       "Latitude": 59.3293,
       "Longitude": 18.0686
     },
     "Destination": {
       "Name": "Göteborg",
-      "X": 300,
-      "Y": 400,
+      "X": 38,
+      "Y": 710,
       "Latitude": 57.7089,
       "Longitude": 11.9746
     },
     "DrivingDistance": 474,
-    "StraightLineDistance": 402.0,
-    "Cost":  0.0
+    "StraightLineDistance": 402,
+    "Cost": 800
   },
   {
     "Start": {
       "Name": "Stockholm",
-      "X": 100,
-      "Y": 200,
+      "X": 267,
+      "Y": 608,
       "Latitude": 59.3293,
       "Longitude": 18.0686
     },
     "Destination": {
       "Name": "Malmö",
-      "X": 500,
-      "Y": 600,
-      "Latitude": 55.6050,
+      "X": 77,
+      "Y": 842,
+      "Latitude": 55.605,
       "Longitude": 13.0038
     },
     "DrivingDistance": 617,
-    "StraightLineDistance": 472.0,
-    "Cost": 0.0
+    "StraightLineDistance": 472,
+    "Cost": 1000
   },
   {
     "Start": {
       "Name": "Göteborg",
-      "X": 300,
-      "Y": 400,
+      "X": 38,
+      "Y": 710,
       "Latitude": 57.7089,
       "Longitude": 11.9746
     },
     "Destination": {
       "Name": "Malmö",
-      "X": 500,
-      "Y": 600,
-      "Latitude": 55.6050,
+      "X": 77,
+      "Y": 842,
+      "Latitude": 55.605,
       "Longitude": 13.0038
     },
     "DrivingDistance": 259,
-    "StraightLineDistance": 211.0,
-    "Cost": 0.0
+    "StraightLineDistance": 211,
+    "Cost": 300
   },
   {
     "Start": {
       "Name": "Umeå",
-      "X": 700,
-      "Y": 800,
+      "X": 350,
+      "Y": 327,
       "Latitude": 63.8258,
-      "Longitude": 20.2630
+      "Longitude": 20.263
     },
     "Destination": {
       "Name": "Borås",
-      "X": 900,
-      "Y": 1000,
-      "Latitude": 57.7210,
+      "X": 74,
+      "Y": 709,
+      "Latitude": 57.721,
       "Longitude": 12.9401
     },
     "DrivingDistance": 603,
     "StraightLineDistance": 488.11,
-    "Cost": 0.0
+    "Cost": 2000
   }
-
 ]

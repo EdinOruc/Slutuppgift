@@ -4,9 +4,8 @@ using LabShortestRouteFinder.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Windows;
-using System.Windows.Controls;
 using System.Xml.Linq;
 
 namespace LabShortestRouteFinder.ViewModel
@@ -14,16 +13,7 @@ namespace LabShortestRouteFinder.ViewModel
     public class MainViewModel : INotifyPropertyChanged
     {
         
-        private Route _selectedRoute;
-        public Route SelectedRoute
-        {
-            get => _selectedRoute;
-            set
-            {
-                _selectedRoute = value;
-                OnPropertyChanged(nameof(SelectedRoute));
-            }
-        }
+
         public ObservableCollection<CityNode> Cities { get; private set; }
         public ObservableCollection<Route> Routes { get; private set; }
 
@@ -40,6 +30,31 @@ namespace LabShortestRouteFinder.ViewModel
             LoadRouteInformationFileFromJson();
 
             NormalizeCoordinates();
+        }
+        public void SaveRoutesToJson()
+        {
+            try
+            {
+
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                    WriteIndented = true
+                };
+
+                var json = JsonSerializer.Serialize(this.Routes.ToArray(),options);
+                System.Diagnostics.Debug.WriteLine($"Serialized Data: {json}");
+                string filePath = "..\\..\\..\\Resources\\routes.json";
+                File.WriteAllText(filePath, json);
+                File.SetLastWriteTime(filePath, DateTime.Now);
+
+
+                System.Diagnostics.Debug.WriteLine("Data successfully saved.");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error saving data: {ex.Message}");
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -150,10 +165,6 @@ namespace LabShortestRouteFinder.ViewModel
             {
                 throw new FileNotFoundException($"The file {filePath} was not found.");
             }
-        }
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Console.WriteLine("cvdvccvvc");
         }
 
     }

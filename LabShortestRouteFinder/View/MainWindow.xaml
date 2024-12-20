@@ -22,7 +22,10 @@
         <TabControl x:Name="MainTabControl">
             <!-- Tab for List View -->
             <TabItem Header="List View" x:Name="ListTab">
-                <view:ListViewControl DataContext="{Binding RouteViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+                <Grid>
+                    <view:ListViewControl DataContext="{Binding RouteViewModel, RelativeSource={RelativeSource AncestorType=Window}, PresentationTraceSources.TraceLevel=High}" />
+                    <Button Content="Save Route" Grid.Row="6" Grid.ColumnSpan="2" Width="150" Height="40" Margin="5" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SaveRouteButton_Click" />
+                </Grid>
             </TabItem>
 
             <!-- Tab for Graph View -->
@@ -30,28 +33,6 @@
                 <view:GraphViewControl DataContext="{Binding GraphViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
             </TabItem>
         </TabControl>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Text="Redigera vald rutt:" FontWeight="Bold" Margin="0,0,0,10"/>
-
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                <TextBox Text="Start:" Width="80"/>
-                <TextBox Text="{Binding MainViewModel.SelectedRoute.Start, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                <TextBox Text="Destination:" Width="80"/>
-                <TextBox Text="{Binding MainViewModel.SelectedRoute.Destination, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                <TextBox Text="Distance:" Width="80"/>
-                <TextBox Text="{Binding MainViewModel.MainViewModel.SelectedRoute.Distance, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                <TextBox Text="Cost:" Width="80"/>
-                <TextBox Text="{Binding MainViewModel.SelectedRoute.Cost, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
-            </StackPanel>
-        </StackPanel>
-    </DockPanel>
+    </DockPanel> 
 </Window>
     

@@ -8,7 +8,7 @@ namespace LabShortestRouteFinder.ViewModel
     public class RouteViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Route> Routes { get; }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         private Route _selectedRoute;
@@ -25,10 +25,6 @@ namespace LabShortestRouteFinder.ViewModel
         {
             // Reference the shared Routes collection
             Routes = mainViewModel.Routes;
-        }
-
-        public RouteViewModel()
-        {
         }
     }
 }
